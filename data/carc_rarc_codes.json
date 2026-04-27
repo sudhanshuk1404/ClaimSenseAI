@@ -1,0 +1,128 @@
+{
+  "carc_codes": {
+    "4": {
+      "category": "Coding",
+      "description": "The procedure code is inconsistent with the modifier used, or a required modifier is missing.",
+      "typical_recoverability": "recoverable",
+      "appeal_notes": "Correct the modifier combination and resubmit. Attach documentation supporting the modifier."
+    },
+    "16": {
+      "category": "Information",
+      "description": "Claim/service lacks information needed for adjudication.",
+      "typical_recoverability": "recoverable",
+      "appeal_notes": "Identify missing field from RARC/remark codes. Supply missing info and resubmit or appeal with documentation."
+    },
+    "18": {
+      "category": "Duplicate",
+      "description": "Exact duplicate claim/service.",
+      "typical_recoverability": "not_recoverable",
+      "appeal_notes": "Verify whether original claim was paid. If original was denied, resubmit as corrected claim (frequency code 7)."
+    },
+    "22": {
+      "category": "Coordination of Benefits",
+      "description": "This care may be covered by another payer per coordination of benefits.",
+      "typical_recoverability": "recoverable",
+      "appeal_notes": "Submit to primary payer first. Include EOB from primary when billing secondary."
+    },
+    "29": {
+      "category": "Timely Filing",
+      "description": "The time limit for filing has expired.",
+      "typical_recoverability": "needs_review",
+      "appeal_notes": "Calculate actual filing window. Gather proof of timely filing or valid delay reason codes. Medicare = 365 days; Commercial = 90-180 days typical."
+    },
+    "45": {
+      "category": "Contractual",
+      "description": "Charge exceeds fee schedule/maximum allowable or contracted/legislated fee arrangement.",
+      "typical_recoverability": "not_recoverable",
+      "appeal_notes": "Contractual write-off. Cannot bill patient for CO group denials."
+    },
+    "50": {
+      "category": "Medical Necessity",
+      "description": "These are non-covered services because this is not deemed a medical necessity by the payer.",
+      "typical_recoverability": "needs_review",
+      "appeal_notes": "Appeal with clinical documentation: physician notes, prior auth, peer-reviewed literature supporting necessity."
+    },
+    "96": {
+      "category": "Non-Covered",
+      "description": "Non-covered charge(s). At least one remark code must be provided.",
+      "typical_recoverability": "needs_review",
+      "appeal_notes": "Review patient benefit plan. May be billable to patient under PR group. Check for policy exclusions."
+    },
+    "97": {
+      "category": "Duplicate",
+      "description": "The benefit for this service is included in the payment/allowance for another service/procedure that has already been adjudicated.",
+      "typical_recoverability": "not_recoverable",
+      "appeal_notes": "Unbundling issue. Review CCI edits. Cannot be separately billed when bundled into another code."
+    },
+    "109": {
+      "category": "Policy",
+      "description": "Claim/service not covered by this payer/contractor. You must send the claim/service to the correct payer/contractor.",
+      "typical_recoverability": "recoverable",
+      "appeal_notes": "Identify correct payer. Resubmit to appropriate payer."
+    },
+    "197": {
+      "category": "Precertification",
+      "description": "Precertification/authorization/notification absent.",
+      "typical_recoverability": "needs_review",
+      "appeal_notes": "Obtain retroactive authorization if payer allows. Appeal with documentation of medical necessity. Some payers waive if emergent."
+    },
+    "252": {
+      "category": "Information",
+      "description": "An attachment/other documentation is required to adjudicate this claim/service.",
+      "typical_recoverability": "recoverable",
+      "appeal_notes": "Attach required documentation (operative report, medical records, itemized bill) and resubmit."
+    }
+  },
+  "rarc_codes": {
+    "N20": {
+      "description": "Missing/incomplete/invalid UPIN/individual NPI.",
+      "related_carc": "16"
+    },
+    "N95": {
+      "description": "This provider type/provider specialty may not bill this service.",
+      "related_carc": "4"
+    },
+    "N130": {
+      "description": "Consult your provider manual for additional information about this service.",
+      "related_carc": "50"
+    },
+    "N386": {
+      "description": "This decision was based on a Local Coverage Determination (LCD).",
+      "related_carc": "50"
+    },
+    "MA01": {
+      "description": "If you do not agree with what we approved for these services, you may appeal our decision.",
+      "related_carc": null
+    },
+    "M51": {
+      "description": "Missing/incomplete/invalid procedure code(s).",
+      "related_carc": "16"
+    },
+    "M76": {
+      "description": "Missing/incomplete/invalid diagnosis or condition.",
+      "related_carc": "16"
+    }
+  },
+  "adjustment_groups": {
+    "CO": {
+      "name": "Contractual Obligation",
+      "description": "Provider agreed to this adjustment per contract — cannot bill patient",
+      "patient_billable": false
+    },
+    "PR": {
+      "name": "Patient Responsibility",
+      "description": "Patient owes this amount (deductible, coinsurance, copay)",
+      "patient_billable": true
+    },
+    "OA": {
+      "name": "Other Adjustment",
+      "description": "No party is assigned financial responsibility",
+      "patient_billable": false
+    },
+    "PI": {
+      "name": "Payer Initiated",
+      "description": "Payer-initiated reduction not tied to contract",
+      "patient_billable": false
+    }
+  }
+}
