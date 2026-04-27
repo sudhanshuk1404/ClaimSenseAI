@@ -12,6 +12,8 @@ Built for the **Gabeo AI ML Engineer Take-Home Assignment**.
 # 1. Clone and install
 git clone https://github.com/sudhanshuk1404/ClaimSense-AI.git
 cd ClaimSense-AI
+python -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 
 # 2. Set your OpenAI API key
